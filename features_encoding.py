@@ -44,7 +44,9 @@ f15=[]
 
 
 # features_encoding
-content=content.loc[:,"內文欄位"]
+import pandas as pd
+content01=pd.read_csv("ftest.csv")
+content=content01.loc[:,"text"]
 for con in content:
     nf2=0
     nf6=0
@@ -69,7 +71,7 @@ for con in content:
             f2.append(2)
             nf2=2
             break
-    elif nf2 == 0:
+    if nf2 == 0:
         f2.append(0)
     for c in 傷害方式:
         if c in con:
@@ -100,7 +102,7 @@ for con in content:
             f6.append(1)
             nf6=1
             break
-    elif nf6 == 0:
+    if nf6 == 0:
         f6.append(0)
     for g2 in 犯後態度2:
         if g2 in con:
@@ -113,7 +115,7 @@ for con in content:
             f7.append(1)
             nf7=1
             break
-    elif nf7 == 0:
+    if nf7 == 0:
         f7.append(0)
     for h2 in 坦承情況2:
         if h2 in con:
@@ -126,7 +128,7 @@ for con in content:
             f8.append(1)
             nf8=1
             break
-    elif nf8 == 0:
+    if nf8 == 0:
         f8.append(0)
     for i2 in 賠償狀況2:
         if i2 in con:
@@ -139,7 +141,7 @@ for con in content:
             f9.append(1)
             nf9=1
             break
-    elif nf9 == 0:
+    if nf9 == 0:
         f9.append(0)
     for j in 經濟狀況:
         if j in con:
@@ -170,7 +172,7 @@ for con in content:
             f13.append(1)
             nf13=1
             break
-    elif nf13 == 0:
+    if nf13 == 0:
         f13.append(0)
     for n in 告訴人和被告人之關係:
         if n in con:
@@ -184,3 +186,4 @@ for con in content:
             break
     else:
         f15.append(0)
+print(f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15)
